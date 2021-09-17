@@ -14,7 +14,7 @@ int subsequenceCount(char S[], char T[])
 	int m = strlen(T);
 	int n = strlen(S);
 
-	if (n > m) return 0;
+	if (m > n) return 0;
 
 	int** mat = (int**)malloc(sizeof(int*) * (m + 1));
 	for (int i = 0; i < m; i++) {
