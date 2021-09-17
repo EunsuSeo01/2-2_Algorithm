@@ -11,30 +11,30 @@
 
 int subsequenceCount(char S[], char T[])
 {
-	int m = strlen(S);
-	int n = strlen(T);
+	int m = strlen(T);
+	int n = strlen(S);
 
 	if (n > m) return 0;
 
-	int** mat = (int**)malloc(sizeof(int*) * n);
-	for (int i = 0; i < n; i++) {
-		mat[i] = (int*)malloc(sizeof(int) * m);
+	int** mat = (int**)malloc(sizeof(int*) * (m + 1));
+	for (int i = 0; i < m; i++) {
+		mat[i] = (int*)malloc(sizeof(int) * (n + 1));
 	}
 
 	// Initializing first column with all 0s.
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < m; i++) {
 		mat[i][0] = 0;
 	}
 
 	// Initializing first row with all 1s.
-	for (int i = 0; i < m; i++) {
+	for (int i = 0; i < n; i++) {
 		mat[0][i] = 1;
 	}
 
 	// Fill mat[][] in bottom up manner
 	for (int i = 1; i <= m; i++) {
 		for (int j = 1; j <= n; j++) {
-			/* code here */
+			
 		}
 	}
 
