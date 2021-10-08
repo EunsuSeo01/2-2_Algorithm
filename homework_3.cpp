@@ -11,9 +11,9 @@
 
 /*
  [subsequenceCount]
- description: Return the number of sub-sequence in sequence string.
+ description: Return the number of distinct sub-sequences in sequence string.
  input: X -> Sequence string. Z -> sub-sequence string.
- output: The number of sub-sequence in sequence string
+ output: The number of distinct sub-sequences in sequence string
 */
 int subsequenceCount(char X[], char Z[])
 {
