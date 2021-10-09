@@ -21,6 +21,35 @@ typedef struct timetable {
 	char city[20];
 } timeT;
 
+void make_timetable(int n, int** timeT, char** city, int cityN) {
+	int temp_time = 0;
+	char temp_city[NAME_SIZE] = {};
+
+	scanf("%d %s", &temp_time, temp_city);
+
+	for (int i = 0; i < cityN; i++) {
+		if (strcmp(temp_city, city[i]) == 0) {
+			timeT[i][n] = temp_time;
+		}
+	}
+}
+
+void find_shortest(int** timeT, int col, int row) {
+	int starting_time = 0;
+	char src[NAME_SIZE], dest[NAME_SIZE];
+
+	scanf("%d", &starting_time);
+	scanf("%s", src);
+	scanf("%s", dest);
+
+	for (int j = 0; j < col; j++) {
+		for (int i = 0; i < row; i++) {
+
+		}
+	}
+	
+}
+
 int main() {
 	int scenario = 0, city_num = 0, table_num = 0;
 
@@ -38,7 +67,7 @@ int main() {
 		for (int j = 0; j < city_num; j++) {
 			city[j] = (char*)malloc(sizeof(char) * NAME_SIZE);
 			scanf("%s", city[j]);
-		}
+		}										// 연결된 도시의 수까지 받음.
 
 		scanf("%d", &table_num);
 		int** timetable = (int**)calloc(sizeof(int), city_num);
@@ -46,14 +75,17 @@ int main() {
 			timetable[i] = (int*)calloc(sizeof(int), table_num);
 		}
 
-	/*	int iter = 0;
-		char check_city[NAME_SIZE];
-		scanf("%d", &iter);
-		scanf("%d %s", &, check_city);*/
+		for(int i = 0; i < table_num; i++) {
+			int iter = 0;
+			scanf("%d", &iter);
 
-	}
+			for (int num = 0; num < iter; num++) {
+				make_timetable(i, timetable, city, city_num);
+			}
+		}	// 시간표 까지 다 받음.
 		
-	
+		find_shortest(timetable, table_num, city_num);
+	}
   
 	return 0;
 }
