@@ -40,7 +40,7 @@ int main() {
 			exit(0);
 		}
 
-		int** mat = (int**)malloc(sizeof(int) * m);
+		int** mat = (int**)malloc(sizeof(int*) * m);
 		for (int i = 0; i < m; i++) {
 			mat[i] = (int*)malloc(sizeof(int) * n);
 		}												// Implement 1,2 of the strategy.

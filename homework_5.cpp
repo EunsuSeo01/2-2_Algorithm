@@ -48,7 +48,7 @@ int main() {
 		}
 
 		// Input the city names.
-		char** city = (char**)malloc(sizeof(char) * city_num);
+		char** city = (char**)malloc(sizeof(char*) * city_num);
 		for (int j = 0; j < city_num; j++) {
 			city[j] = (char*)malloc(sizeof(char) * NAME_SIZE);
 			scanf("%s", city[j]);
