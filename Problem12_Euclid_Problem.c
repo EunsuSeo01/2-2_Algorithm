@@ -15,7 +15,7 @@ int main() {
 	else
 		d = gcd(b, a);
 
-	extended(a, b, d);
+	extended(a, b);
 
 	printf("%d %d %d\n", x, y, d);
 
