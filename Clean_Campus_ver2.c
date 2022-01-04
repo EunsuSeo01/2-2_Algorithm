@@ -56,13 +56,12 @@ void convexHull(int n, int* m, struct point* points)
 		for (int i = 0; i < n; i++)
 		{
 			// If i is more counterclockwise than current q, then update q
-			if (ccw(points[p], points[i], points[q]) == 1)	// 반시계 방향인 i가 있다. == p랑 현재의 q보다 더 작은 각도를 이루는 점이 i이다.
-				/* 가운데에 points[i]가 들어가게 함으로써 기준점 p -> points[i] -> 새로 택한 q의
-				   순서로 둘러쌌을 때의 방향을 확인하는 것임. 모든 점을 가운데에 두고 확인해서
-				   새로 택한 q가 현재 p기준 제일 왼쪽에 있는 점이 맞는지 확인하는 것.
-				   = p 다음의 점이 q라서 일단 골랐는데, 이 q가 p랑 가장 작은 각도를 이루는 점인지는 모름.
-				   q보다 더 작은 각도를 이룰 수 있는 점이 또 없는지 확인하는 것. */
-				q = i;	// 있으면 그걸 q로 설정함.
+			if (ccw(points[p], points[q], points[i]) == -1)	// 시계 방향인 i가 있다. == p랑 현재의 q보다 더 작은 각도를 이루는 점이 i이다.
+				/* 마지막에 points[i]가 들어가게 함으로써 기준점 p -> 새로 택한 q -> points[i]의
+				   순서로 둘러쌌을 때의 방향을 확인하는 것임. q를 가운데에 두고, 모든 점과 이어봄으로써
+				   시계 방향을 이루는 게 있는지 확인함. = 새로 택한 q가 현재 p와 가장 작은 각도를 이루는 점이 맞는지 확인하는 것.
+				   시계 방향 이루는 점이 있다면 그 점이랑 p가 이루는 각도가 더 작은 각도인 것. */
+				q = i;	// 있으면 그 점을 q로 설정함.
 		}
 
 		// Now q is the most counterclockwise with respect to p

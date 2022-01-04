@@ -1,7 +1,6 @@
 /*
  2021 Algorithm
  Problem 14: Clean Campus - Using Graham's scan algorithm.
- 1:22~
 */
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
